@@ -1,0 +1,19 @@
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - uses: actions/checkout@v2
+      - name: Generate HTML From Roam
+        uses: dvargas92495/generate-roam-site-action@2.9.3
+        with:
+          roam_username: lv460051518@gmail.com
+          roam_password: ${{ secrets.ROAM_PASSWORD }}
+          roam_graph: Note-Tasking
+      - name: Upload to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: out # The folder the action should deploy.
