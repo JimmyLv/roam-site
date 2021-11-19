@@ -9,9 +9,9 @@ jobs:
       - name: Generate HTML From Roam
         uses: dvargas92495/generate-roam-site-action@2.9.3
         with:
-          roam_username: lv460051518@gmail.com
+          roam_username: jimmy.jinglv@gmail.com
           roam_password: ${{ secrets.ROAM_PASSWORD }}
-          roam_graph: Note-Tasking
+          roam_graph: JimmyLv
       - name: Upload to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
